@@ -3,7 +3,7 @@ services:
     backend:
         container_name: frontend-dev
         restart: always
-        command: yarn dev
+        command: npm run dev
         build: .
         ports:
-            - 3000:3000
+            - 8000:8000
