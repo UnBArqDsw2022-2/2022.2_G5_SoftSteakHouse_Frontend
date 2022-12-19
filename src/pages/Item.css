@@ -1,0 +1,35 @@
+body {
+    background: #000000;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+div {
+    text-align: center;
+    margin-right: 213px;
+    margin-left: 213px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    text-align: left;
+}
+
+button {
+    background: #686868;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    text-align: left;
+    height: 100%;
+}
