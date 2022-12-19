@@ -1,0 +1,9 @@
+version: '3'
+services:
+    backend:
+        container_name: frontend-dev
+        restart: always
+        command: npm run dev
+        build: .
+        ports:
+            - 8000:8000
