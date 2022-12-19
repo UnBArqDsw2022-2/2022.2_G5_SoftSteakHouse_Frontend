@@ -1,7 +1,7 @@
 import './Item.css';
 import BatataFrita from '../assets/BatataFrita.jpg'
 
-export function ImagemItem() {
+export function Item() {
     return (
         <div>
             <br />
