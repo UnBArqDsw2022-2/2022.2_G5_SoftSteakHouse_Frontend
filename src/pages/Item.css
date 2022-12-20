@@ -1,35 +1,46 @@
 body {
     background: #000000;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 130%;
 }
 
-div {
+h1 {
     text-align: center;
-    margin-right: 213px;
-    margin-left: 213px;
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    max-width: 665px;
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
     height: auto;
+    margin: auto;
+    display: grid;
 }
 
 p {
-    text-align: left;
+    max-width: 665px;
+    margin: auto;
 }
 
 button {
     background: #686868;
     color: #ffffff;
     border: none;
-    padding: 15px;
-    text-decoration: none;
+    padding: 10px;
     cursor: pointer;
-    transition: background .3s;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: 75%;
+    max-width: 665px;
     width: 100%;
-    font-size: 15px;
-    text-align: left;
-    height: 100%;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
 }
