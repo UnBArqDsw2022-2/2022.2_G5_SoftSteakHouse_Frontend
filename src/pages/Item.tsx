@@ -3,29 +3,47 @@ import BatataFrita from '../assets/BatataFrita.jpg'
 import { useFetch } from "../hooks/useFetch";
 
 type Item = {
-    cep: string;
-    state: string;
-    city: string;
+    titulo: string;
+    descricao: string;
+    preco: number;
+}
+
+type Adicional = {
+    nome: string;
+    preco: number;
 }
 
 export function Item() {
-    const { data: item, error, isFetching } = 
-        useFetch<Item>('api/cep/v1/72135190')
+    const { data: itens, error, isFetching } = 
+        useFetch<Item[]>('api/v1/itens?search=Batata+Frita')
+
+    const { data: adicionais } = 
+        useFetch<Adicional[]>('api/v1/adicionais')
 
     return (
         <div>
             { isFetching && <p>Carregando...</p> }
             <br />
             <img src={BatataFrita} />
-            <h1>{ item?.cep }</h1>
-            <p>{ item?.state }</p>
+            <h1>{ itens?.map(itens => {
+                return itens.titulo
+                })}</h1>
+            <p>{ itens?.map(itens => {
+                return itens.descricao
+                })}</p>
             <br />
-            <p>{ item?.city }</p>
+            <p>{ itens?.map(itens => {
+                return itens.preco
+                })}</p>
             <hr />
             <h2>Adicionais</h2>
-            <button name="Botão Adicionais">Refri Lata R$ 08,99</button>
-            <button name="Botão Adicionais">Cheddar e Bacon  R$ 08,99</button>
-            <button name="Botão Adicionais">Filé e Provolone R$ 11,99</button>
+            {adicionais?.map(adicional => {
+                return (
+                    <button name="Botão Adicionais">
+                        {adicional.nome + " R$ " + adicional.preco}
+                    </button>
+                )
+            })}
         </div >
     );
 }
