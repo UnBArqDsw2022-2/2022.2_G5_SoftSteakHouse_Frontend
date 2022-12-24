@@ -1,16 +1,26 @@
 import './Item.css';
 import BatataFrita from '../assets/BatataFrita.jpg'
+import { useFetch } from "../hooks/useFetch";
+
+type Item = {
+    cep: string;
+    state: string;
+    city: string;
+}
 
 export function Item() {
+    const { data: item, error, isFetching } = 
+        useFetch<Item>('api/cep/v1/72135190')
+
     return (
         <div>
+            { isFetching && <p>Carregando...</p> }
             <br />
             <img src={BatataFrita} />
-            <h1>Batata Frita</h1>
-            <p>Batata colhida nos lindos campos de Barba Longa e frita no óleo usado nos pastéis
-                do dia anterior. Temperada com a grama triturada do comércio vizinho.</p>
+            <h1>{ item?.cep }</h1>
+            <p>{ item?.state }</p>
             <br />
-            <p>R$ 19,99</p>
+            <p>{ item?.city }</p>
             <hr />
             <h2>Adicionais</h2>
             <button name="Botão Adicionais">Refri Lata R$ 08,99</button>
