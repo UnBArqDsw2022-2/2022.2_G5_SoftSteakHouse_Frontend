@@ -19,6 +19,7 @@ export function AppRoutes() {
                 <Route path="/cardapio" element={<Cardapio />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/gerenciamentomesas" element={<GerenciamentoMesas />} />
+                <Route path="/item" element={<Item />} />
                 <Route path="/api" element={<Api />} />
             </Routes>
         </Router>
