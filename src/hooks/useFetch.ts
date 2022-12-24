@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios, { AxiosRequestConfig } from "axios";
 
 const api = axios.create({
-    baseURL: 'https://brasilapi.com.br'
+    baseURL: 'http://127.0.0.1:8000'
 })
 
 export function useFetch<T = unknown>(url: string, options?: AxiosRequestConfig) {
