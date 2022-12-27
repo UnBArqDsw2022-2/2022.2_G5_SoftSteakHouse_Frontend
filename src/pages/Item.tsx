@@ -6,6 +6,7 @@ type Item = {
     titulo: string;
     descricao: string;
     preco: number;
+    link_imagem: string;
 }
 
 type Adicional = {
@@ -15,26 +16,22 @@ type Adicional = {
 
 export function Item() {
     const { data: itens, error, isFetching } = 
-        useFetch<Item[]>('api/v1/itens?search=Batata+Frita')
+        useFetch<Item[]>('api/v1/itens?search=Coxinha+de+Frango')
 
     const { data: adicionais } = 
         useFetch<Adicional[]>('api/v1/adicionais')
+
+    let item = getFirstObject(itens);
 
     return (
         <div>
             { isFetching && <p>Carregando...</p> }
             <br />
-            <img src={BatataFrita} />
-            <h1>{ itens?.map(itens => {
-                return itens.titulo
-                })}</h1>
-            <p>{ itens?.map(itens => {
-                return itens.descricao
-                })}</p>
+            <img src={item?.link_imagem} />
+            <h1>{ item?.titulo }</h1>
+            <p>{ item?.descricao }</p>
             <br />
-            <p>{ itens?.map(itens => {
-                return itens.preco
-                })}</p>
+            <p>{ item?.preco }</p>
             <hr />
             <h2>Adicionais</h2>
             {adicionais?.map(adicional => {
@@ -47,3 +44,11 @@ export function Item() {
         </div >
     );
 }
+
+function getFirstObject(list: Item[] | null) {
+    if (!list || list.length === 0) {
+      return null;
+    }
+  
+    return list[0];
+  }
