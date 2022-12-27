@@ -4,6 +4,11 @@ body {
     font-size: 130%;
 }
 
+div {
+    max-width: 665px;
+    margin: auto;
+}
+
 h1 {
     text-align: center;
 }
@@ -12,21 +17,12 @@ h2 {
     text-align: center;
 }
 
-hr {
-    max-width: 665px;
-}
-
 img {
     max-width: 100%;
     max-height: 500px;
     height: auto;
     margin: auto;
     display: grid;
-}
-
-p {
-    max-width: 665px;
-    margin: auto;
 }
 
 button {

@@ -29,7 +29,6 @@ export function Item() {
             <img src={ item?.link_imagem } />
             <h1>{ item?.titulo }</h1>
             <p>{ item?.descricao }</p>
-            <br />
             <p>{ item?.preco }</p>
             <hr />
             <h2>Adicionais</h2>
