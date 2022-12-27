@@ -35,7 +35,8 @@ export function Item() {
             {adicionais?.map(adicional => {
                 return (
                     <button name="Botão Adicionais">
-                        {adicional.nome + " R$ " + adicional.preco}
+                        <div style={{ float: "left" }}>{adicional.nome}</div>
+                        <div style={{ float: "right" }}>{"R$ " + adicional.preco}</div>
                     </button>
                 )
             })}
