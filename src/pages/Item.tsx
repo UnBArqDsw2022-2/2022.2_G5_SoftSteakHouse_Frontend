@@ -1,5 +1,4 @@
 import './Item.css';
-import BatataFrita from '../assets/BatataFrita.jpg'
 import { useFetch } from "../hooks/useFetch";
 
 type Item = {
@@ -16,18 +15,18 @@ type Adicional = {
 
 export function Item() {
     const { data: itens, error, isFetching } = 
-        useFetch<Item[]>('api/v1/itens?search=Coxinha+de+Frango')
+        useFetch<Item[]>('api/v1/itens?search=Onion+Rings')
 
     const { data: adicionais } = 
         useFetch<Adicional[]>('api/v1/adicionais')
 
-    let item = getFirstObject(itens);
+    const item = itens && itens[0];
 
     return (
         <div>
             { isFetching && <p>Carregando...</p> }
             <br />
-            <img src={item?.link_imagem} />
+            <img src={ item?.link_imagem } />
             <h1>{ item?.titulo }</h1>
             <p>{ item?.descricao }</p>
             <br />
@@ -44,11 +43,3 @@ export function Item() {
         </div >
     );
 }
-
-function getFirstObject(list: Item[] | null) {
-    if (!list || list.length === 0) {
-      return null;
-    }
-  
-    return list[0];
-  }
