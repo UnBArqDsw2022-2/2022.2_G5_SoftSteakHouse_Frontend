@@ -1,0 +1,41 @@
+body {
+    background: #000000;
+    color: #ffffff;
+    font-size: 130%;
+}
+
+div {
+    max-width: 665px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    margin: auto;
+    display: grid;
+}
+
+button {
+    background: #686868;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 75%;
+    max-width: 665px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
