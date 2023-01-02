@@ -760,30 +760,21 @@ postcss@^8.4.18:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-<<<<<<< HEAD
-
 prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
-=======
-prop-types@^15.7.2:
-  version "15.8.1"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
->>>>>>> 7578e9e (<feat>[Login]: Esqueleto da pagina de login)
+
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
   dependencies:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
-<<<<<<< HEAD
 proxy-from-env@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
   integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
-=======
->>>>>>> 7578e9e (<feat>[Login]: Esqueleto da pagina de login)
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -792,26 +783,16 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-<<<<<<< HEAD
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
 
-=======
->>>>>>> 7578e9e (<feat>[Login]: Esqueleto da pagina de login)
 react-feather@^2.0.10:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.10.tgz#0e9abf05a66754f7b7bb71757ac4da7fb6be3b68"
   integrity sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==
   dependencies:
     prop-types "^15.7.2"
-<<<<<<< HEAD
-=======
-
-react-is@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
->>>>>>> 7578e9e (<feat>[Login]: Esqueleto da pagina de login)
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-refresh@^0.14.0:

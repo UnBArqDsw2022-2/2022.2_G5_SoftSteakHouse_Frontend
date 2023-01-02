@@ -1,26 +1,42 @@
 import { useState } from "react";
 import "./Login.css";
 import { User } from 'react-feather';
+import { api } from "../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/authContext";
+import { LoginUser } from "../provider/authProvider";
+
+
 
 export function Login() {
-    const [user, setUser] = useState({
-        email: "",
+    const { login } = useAuth();
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState<boolean>(false);
+    const [user, setUser] = useState<LoginUser>({
+        username: "",
         password: ""
     });
 
-function onChangePassword(password: string) {
-    if(password.length > 8) return;
-    setUser({...user, password: password});
-}
+    function onChangePassword(password: string) {
+        if(password.length > 8) return;
+        setUser({...user, password: password});
+    }
 
-function onChangeEmail(email: string) {
-    if(email.length > 8) return;
-    setUser({...user, password: email});
-}
+    function onChangeEmail(username: string) {
+        if(username.length > 8) return;
+        setUser({...user, username: username});
+    }
 
 
     function onSubmit() {
-         console.log('ok');
+        setLoading(true);
+        try {
+            login(user);
+            navigate("/telaPrincipal");
+        } catch (error) {
+            alert(error);
+            setLoading(true);
+        }
     }
     return (
         <body>
@@ -38,7 +54,7 @@ function onChangeEmail(email: string) {
                 </section>
                 <section>
                     <div className="submit-div">
-                        <button type="submit" className="submit-button"><span>Entrar</span></button>
+                        <button type="submit" disabled={loading} className="submit-button"><span>{loading? "Carregando...": "Entrar"}</span></button>
                     </div>
                     <div className="submit-div">
                         <a href="#">Esqueceu a senha?</a>
