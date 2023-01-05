@@ -2,16 +2,27 @@ import "../App.css"
 import { Header } from "../assets/Header";
 import './PaginaInicial';
 import cavalo from "../assets/cavalo.jpg";
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFilter} from '@fortawesome/free-solid-svg-icons';
 
 export function Cardapio() {
     return (
         <div>
             <Header/>
             <body>
-                <div id="pesquisa">
-                    Pesquisa <i className="fa-regular fa-magnifying-glass"></i>
+            <div id='center'>
+                    <div className='col-2'>
+                        <div id="pesquisa">
+                            Pesquisa
+                        </div>
+                    </div>
+                    <br/>
+                    <div className='col-2'>
+                        <FontAwesomeIcon id="filter" icon={faFilter} />
+                    </div>
                 </div>
+                <br/>
+                <br/>
                 <hr/>
                 <div className="container">
                     <div className="row">

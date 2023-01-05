@@ -10,6 +10,13 @@ body {
     width: 65%;
     float: left;
 }
+.col-2 {
+    width: 50%;
+    float: left;
+}
+#center{
+    margin-left: 30%;
+}
 .softsteak{
     width: 90%;
     float: left;
@@ -28,6 +35,7 @@ body {
     text-align: center;
     margin: auto;
 }
+
 .destaque {
     border-radius: 25px;
     background: gray;
@@ -58,4 +66,12 @@ body {
     width: 45%;
     margin-top: -15px;
     float: left;
+}
+.menu {
+    float: left;
+    width: 50%;
+}
+.singIn {
+    float: right;
+    width: 50%;
 }

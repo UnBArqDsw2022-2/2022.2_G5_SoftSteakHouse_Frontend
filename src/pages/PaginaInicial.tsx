@@ -2,6 +2,8 @@ import './PaginaInicial.css';
 import { Header } from "../assets/Header";
 import cavalo from "../assets/cavalo.jpg";
 import softsteak from "../assets/softsteak.jpg"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFilter} from '@fortawesome/free-solid-svg-icons';
 
 export function PaginaInicial() {
     return (
@@ -15,12 +17,19 @@ export function PaginaInicial() {
                 <h2>Soft Steak House</h2>
             </div>
             <div id="right">
-                <span>
-                    <div id="pesquisa">
-                        Pesquisa <i className="fa-regular fa-magnifying-glass"></i>
+                <div id='center'>
+                    <div className='col-2'>
+                        <div id="pesquisa">
+                            Pesquisa
+                        </div>
                     </div>
-                    <i className="fa-regular fa-filter"></i>
-                </span>
+                    <br/>
+                    <div className='col-2'>
+                        <FontAwesomeIcon id="filter" icon={faFilter} />
+                    </div>
+                </div>
+                <br/>        
+                <br/>
                 <hr/>
                 <h1>Destaques</h1>
                 <div className="destaque">
