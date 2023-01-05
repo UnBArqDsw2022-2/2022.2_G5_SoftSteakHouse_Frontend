@@ -2,3 +2,7 @@ body {
     background: #000000;
     color: #ffffff;
 }
+.item {
+    background: gray;
+    border-radius: 10px;
+}

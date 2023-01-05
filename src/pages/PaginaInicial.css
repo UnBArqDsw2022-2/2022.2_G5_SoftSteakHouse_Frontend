@@ -1,0 +1,61 @@
+body {
+    background: #000000;
+    color: #ffffff;
+}
+#left {
+    width: 35%;
+    float: left;
+}
+#right {
+    width: 65%;
+    float: left;
+}
+.softsteak{
+    width: 90%;
+    float: left;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+#pesquisa {
+    padding: 10px;
+    border: solid 3px;
+    border-color: #ffffff;
+    border-radius: 25px;
+    width: 200px;
+    color: gray;
+    text-align: center;
+    margin: auto;
+}
+.destaque {
+    border-radius: 25px;
+    background: gray;
+    width: 38%;
+    height: 100px;
+    padding: 10px;
+    float: left;
+    margin: 10px;
+}
+.prato {
+    border-radius: 25px;
+    background: gray;
+    width: 29%;
+    height: 110px;
+    padding: 10px;
+    float: left;
+    margin: 10px;
+}
+.imgPrato {
+    width: 50%;
+    float: left;
+    margin-right: 5px;
+}
+.img{
+    width: 100%;
+}
+.conteudo {
+    width: 45%;
+    margin-top: -15px;
+    float: left;
+}
