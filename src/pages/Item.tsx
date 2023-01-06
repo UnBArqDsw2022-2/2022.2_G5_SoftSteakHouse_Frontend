@@ -39,7 +39,7 @@ export function Item() {
                 <h2>Adicionais</h2>
                 {adicionais?.map(adicional => {
                     return (
-                        <button name="Botão Adicionais">
+                        <button name="Botão Adicionais" className="botaoAdicional">
                             <div style={{ float: "left" }}>{adicional.nome}</div>
                             <div style={{ float: "right" }}>{"R$ " + adicional.preco}</div>
                         </button>
