@@ -14,14 +14,12 @@ type Adicional = {
     preco: number;
 }
 
-type ItemProps = {
-    title: string;
-    setTitle: (title: string) => void;
-};
+export function Item() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const titulo = searchParams.get('titulo');
 
-export function Item(props: ItemProps) {
     const { data: itens, error, isFetching } =
-        useFetch<Item[]>('api/v1/itens?search=' + props.title)
+        useFetch<Item[]>('api/v1/itens?search=' + titulo)
 
     const { data: adicionais } =
         useFetch<Adicional[]>('api/v1/adicionais')
