@@ -6,6 +6,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { useFetch } from "../hooks/useFetch";
 import { Item } from "./Item";
 import { useNavigate } from "react-router-dom";
+import './Cardapio.css';
 
 type Item = {
     titulo: string;
@@ -52,6 +53,7 @@ export function Cardapio() {
                                             <button
                                                 style={{ display: "flex", width: "100%" }}
                                                 onClick={() => handleClick(item.titulo)}
+                                                className="botaoItem"
                                             >
                                                 <div style={{ width: "50%" }}>
                                                     <img src={item.link_imagem} alt={item.titulo} />
