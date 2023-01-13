@@ -2,7 +2,16 @@ body {
     background: #000000;
     color: #ffffff;
 }
+
 .item {
     background: gray;
     border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(82, 82, 94);
+}
+
+button:active {
+    background-color: rgb(22, 22, 22);
 }
