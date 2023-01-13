@@ -27,25 +27,27 @@ export function Item() {
     const item = itens && itens[0];
 
     return (
-        <div>
-            {isFetching && <p>Carregando...</p>}
-            <Header />
-            <div>
-                <img src={item?.link_imagem} />
-                <h1>{item?.titulo}</h1>
-                <p>{item?.descricao}</p>
-                <p>{item?.preco}</p>
-                <hr />
-                <h2>Adicionais</h2>
-                {adicionais?.map(adicional => {
-                    return (
-                        <button name="Botão Adicionais" className="botaoAdicional">
-                            <div style={{ float: "left" }}>{adicional.nome}</div>
-                            <div style={{ float: "right" }}>{"R$ " + adicional.preco}</div>
-                        </button>
-                    )
-                })}
-            </div>
-        </div >
+        <body className='paginaItemCorpo'>
+            <div className="paginaItemEstrutura">
+                {isFetching && <p>Carregando...</p>}
+                <Header />
+                <div>
+                    <img className="imagemPaginaItem" src={item?.link_imagem} />
+                    <h1 className='tituloPaginaItem'>{item?.titulo}</h1>
+                    <p>{item?.descricao}</p>
+                    <p>{item?.preco}</p>
+                    <hr />
+                    <h2 className='tituloPaginaAdicionais'>Adicionais</h2>
+                    {adicionais?.map(adicional => {
+                        return (
+                            <button name="Botão Adicionais" className="botaoAdicional">
+                                <div style={{ float: "left" }}>{adicional.nome}</div>
+                                <div style={{ float: "right" }}>{"R$ " + adicional.preco}</div>
+                            </button>
+                        )
+                    })}
+                </div>
+            </div >
+        </body>
     );
 }

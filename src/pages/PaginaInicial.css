@@ -2,29 +2,36 @@ body {
     background: #000000;
     color: #ffffff;
 }
+
 #left {
     width: 35%;
     float: left;
 }
+
 #right {
     width: 65%;
     float: left;
 }
+
 .col-2 {
     width: 50%;
     float: left;
 }
-#center{
+
+#center {
     margin-left: 30%;
 }
-.softsteak{
+
+.softsteak {
     width: 90%;
     float: left;
 }
+
 .container {
     width: 80%;
     margin: auto;
 }
+
 #pesquisa {
     padding: 10px;
     border: solid 3px;
@@ -45,6 +52,7 @@ body {
     float: left;
     margin: 10px;
 }
+
 .prato {
     border-radius: 25px;
     background: gray;
@@ -54,23 +62,28 @@ body {
     float: left;
     margin: 10px;
 }
+
 .imgPrato {
     width: 50%;
     float: left;
     margin-right: 5px;
 }
-.img{
+
+.img {
     width: 100%;
 }
+
 .conteudo {
     width: 45%;
     margin-top: -15px;
     float: left;
 }
+
 .menu {
     float: left;
     width: 50%;
 }
+
 .singIn {
     float: right;
     width: 50%;
