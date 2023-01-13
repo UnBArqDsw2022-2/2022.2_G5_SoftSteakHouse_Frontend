@@ -27,7 +27,7 @@ export function Cardapio() {
 
     return (
         <>
-            <div className="paginaCardapioEstrutura">
+            <div>
                 <Header />
                 <div id="center">
                     <div className="col-2">
@@ -41,27 +41,26 @@ export function Cardapio() {
                 <br />
                 <br />
                 <hr />
-                <div className="container">
-                    <div className="row">
+                <div className="paginaCardapioEstrutura">
+                    <div>
                         <h2>Entradas</h2>
                         <hr />
                         <div>
-                            <div style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+                            <div className="estruturaBotoes">
                                 {itens?.map(item => {
                                     return (
                                         <div>
                                             <button
-                                                style={{ display: "flex", width: "100%" }}
                                                 onClick={() => handleClick(item.titulo)}
                                                 className="botaoItem"
                                             >
                                                 <div style={{ width: "50%" }}>
                                                     <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
                                                 </div>
-                                                <div style={{ width: "50%", padding: "16px" }}>
+                                                <div className="estruturaInternaBotoes">
                                                     <h3>{item.titulo}</h3>
-                                                    <p>{item.descricao}</p>
-                                                    <p>{item.preco}</p>
+                                                    <p className="itemDescricao">{item.descricao}</p>
+                                                    <strong className="itemPreco">{item.preco}</strong>
                                                 </div>
                                             </button>
                                         </div>
