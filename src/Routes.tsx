@@ -14,7 +14,7 @@ export function AppRoutes() {
     return (
         <Router>
             <Routes>
-                <Route path="/paginaInicial" element={<PaginaInicial />} />
+                <Route path="/" element={<PaginaInicial />} />
                 <Route path="/cardapio" element={<Cardapio />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/gerenciamentomesas" element={<GerenciamentoMesas />} />
