@@ -27,7 +27,7 @@ export function Cardapio() {
 
     return (
         <>
-            <div>
+            <div className="paginaCardapioEstrutura">
                 <Header />
                 <div id="center">
                     <div className="col-2">
@@ -56,7 +56,7 @@ export function Cardapio() {
                                                 className="botaoItem"
                                             >
                                                 <div style={{ width: "50%" }}>
-                                                    <img src={item.link_imagem} alt={item.titulo} />
+                                                    <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
                                                 </div>
                                                 <div style={{ width: "50%", padding: "16px" }}>
                                                     <h3>{item.titulo}</h3>
