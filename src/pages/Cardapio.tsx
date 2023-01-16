@@ -29,6 +29,10 @@ export function Cardapio() {
         <>
             <div>
                 <Header />
+                <br />
+                <br />
+                <br />
+                <br />
                 <div id="center">
                     <div className="col-2">
                         <div id="pesquisa">Pesquisa</div>
