@@ -8,8 +8,17 @@ body {
     border-radius: 10px;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #000000;
+}
+
 button:hover {
     background-color: rgb(82, 82, 94);
+    color: #ffffff
 }
 
 button:active {
