@@ -1,22 +1,24 @@
 .sidebar {
-    background-color: #686868;
-    width: 200px;
+    background-color: #494949;
+    width: 18%;
     height: 100%;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-    display: none;
 }
 
-.sidebar-item {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-    display: block;
+.linha-vertical {
+    height: 100%;
+    border-left: 2px solid;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+}
+
+.botoesSideBar {
+    background: #e4e4e4;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 0.5%;
 }
