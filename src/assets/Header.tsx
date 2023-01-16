@@ -4,7 +4,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import '../pages/PaginaInicial.css';
 import '../pages/Sidebar'
 import { Sidebar } from '../pages/Sidebar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Header = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -15,6 +15,8 @@ export const Header = () => {
 
     return (
         <header>
+            {showSidebar && <Sidebar />}
+            <p></p>
             <span onClick={handleClick}>
                 <FontAwesomeIcon className="menu" icon={faBars} />
             </span>
@@ -22,7 +24,6 @@ export const Header = () => {
                 <FontAwesomeIcon className="singIn" icon={faUser} />
             </span>
             <br />
-            {showSidebar && <Sidebar />}
             <hr />
             <br />
         </header>
