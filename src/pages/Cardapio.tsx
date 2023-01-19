@@ -2,11 +2,14 @@ import "../App.css"
 import { Header } from "../assets/Header";
 import './PaginaInicial';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faFilter, faPersonMilitaryToPerson } from '@fortawesome/free-solid-svg-icons';
 import { useFetch } from "../hooks/useFetch";
 import { Item } from "./Item";
 import { useNavigate } from "react-router-dom";
 import './Cardapio.css';
+import React, { useState } from "react";
+
+
 
 type Item = {
     titulo: string;
@@ -16,6 +19,7 @@ type Item = {
 }
 
 export function Cardapio() {
+
     const { data: itens, error, isFetching } =
         useFetch<Item[]>('api/v1/itens')
 
@@ -24,6 +28,13 @@ export function Cardapio() {
     function handleClick(novoTitulo: string) {
         navigate(`/item?titulo=${novoTitulo}`);
     }
+
+
+    const [busca, setBusca] = useState('');
+
+    const lowerBusca = busca.toLowerCase();
+
+    const pratosFiltrados = itens?.filter((prato) => prato.titulo.toLowerCase().includes(lowerBusca));
 
     return (
         <>
@@ -35,7 +46,14 @@ export function Cardapio() {
                 <br />
                 <div id="center">
                     <div className="col-2">
-                        <div id="pesquisa">Pesquisa</div>
+                        <div id="pesquisa">
+                            <input
+                                type="text"
+                                value={busca}
+                                onChange={(ev) => setBusca(ev.target.value)}
+                            />
+                        </div>
+                        
                     </div>
                     <br />
                     <div className="col-2">
@@ -51,7 +69,7 @@ export function Cardapio() {
                         <hr />
                         <div>
                             <div className="estruturaBotoes">
-                                {itens?.map(item => {
+                                {pratosFiltrados?.map(item => {
                                     return (
                                         <div>
                                             <button
