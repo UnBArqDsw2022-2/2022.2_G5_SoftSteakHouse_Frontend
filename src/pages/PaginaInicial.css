@@ -8,6 +8,34 @@ body {
     float: left;
 }
 
+.inputPesquisa {
+    color: white;
+    background: #000000;
+    width: 150px;
+    border: none;
+    padding: 7px;
+    margin-left:-40px;
+  }
+
+.botaoPesquisa {
+    display: flex;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 100%;
+    max-width: 50px;
+    margin-left: 172px;
+    margin-top: -28px;
+}
+
+#MagnifyingGlass{
+    color: white;
+    margin: auto;
+}
+
 #right {
     width: 65%;
     float: left;
@@ -41,6 +69,7 @@ body {
     color: gray;
     text-align: center;
     margin: auto;
+    margin-top: -10px;
 }
 
 .destaque {

@@ -53,6 +53,7 @@ export function Cardapio() {
                                 onChange={(ev) => setBusca(ev.target.value)}
                             />
                         </div>
+                        
                     </div>
                     <br />
                     <div className="col-2">
