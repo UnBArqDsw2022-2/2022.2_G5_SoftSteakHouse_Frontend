@@ -49,6 +49,7 @@ export function Cardapio() {
                         <div id="pesquisa">
                             <input
                                 type="text"
+                                placeholder='Pesquisa'
                                 value={busca}
                                 onChange={(ev) => setBusca(ev.target.value)}
                             />
