@@ -15,6 +15,7 @@ type Item = {
     titulo: string;
     descricao: string;
     preco: number;
+    classificacao: string;
     link_imagem: string;
 }
 
@@ -29,12 +30,21 @@ export function Cardapio() {
         navigate(`/item?titulo=${novoTitulo}`);
     }
 
+    let key = true;
 
     const [busca, setBusca] = useState('');
 
     const lowerBusca = busca.toLowerCase();
 
     const pratosFiltrados = itens?.filter((prato) => prato.titulo.toLowerCase().includes(lowerBusca));
+
+    const entrada = pratosFiltrados?.filter((prato) => prato.classificacao == "ENTRADA");
+
+    const pratoPrincipal = pratosFiltrados?.filter((prato) => prato.classificacao == "PRATOPRINCIPAL");
+
+    const sobremesa = pratosFiltrados?.filter((prato) => prato.classificacao == "SOBREMESA");
+
+    const bebida = pratosFiltrados?.filter((prato) => prato.classificacao == "BEBIDA");
 
     return (
         <>
@@ -69,8 +79,93 @@ export function Cardapio() {
                         <hr />
                         <div>
                             <div className="estruturaBotoes">
-                                {pratosFiltrados?.map(item => {
+                                {entrada?.map(item => {
                                     return (
+                                        
+                                        <div>
+                                            <button
+                                                onClick={() => handleClick(item.titulo)}
+                                                className="botaoItem"
+                                            >
+                                                <div style={{ width: "50%" }}>
+                                                    <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
+                                                </div>
+                                                <div className="estruturaInternaBotoes">
+                                                    <h3>{item.titulo}</h3>
+                                                    <p className="itemDescricao">{item.descricao}</p>
+                                                    <strong className="itemPreco">{item.preco}</strong>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Pratos Principais</h2>
+                        <hr />
+                        <div>
+                            <div className="estruturaBotoes">
+                                {pratoPrincipal?.map(item => {
+                                    return (
+                                        
+                                        <div>
+                                            <button
+                                                onClick={() => handleClick(item.titulo)}
+                                                className="botaoItem"
+                                            >
+                                                <div style={{ width: "50%" }}>
+                                                    <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
+                                                </div>
+                                                <div className="estruturaInternaBotoes">
+                                                    <h3>{item.titulo}</h3>
+                                                    <p className="itemDescricao">{item.descricao}</p>
+                                                    <strong className="itemPreco">{item.preco}</strong>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Sobremesas</h2>
+                        <hr />
+                        <div>
+                            <div className="estruturaBotoes">
+                                {sobremesa?.map(item => {
+                                    return (
+                                        
+                                        <div>
+                                            <button
+                                                onClick={() => handleClick(item.titulo)}
+                                                className="botaoItem"
+                                            >
+                                                <div style={{ width: "50%" }}>
+                                                    <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
+                                                </div>
+                                                <div className="estruturaInternaBotoes">
+                                                    <h3>{item.titulo}</h3>
+                                                    <p className="itemDescricao">{item.descricao}</p>
+                                                    <strong className="itemPreco">{item.preco}</strong>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Bebidas</h2>
+                        <hr />
+                        <div>
+                            <div className="estruturaBotoes">
+                                {bebida?.map(item => {
+                                    return (
+                                        
                                         <div>
                                             <button
                                                 onClick={() => handleClick(item.titulo)}
