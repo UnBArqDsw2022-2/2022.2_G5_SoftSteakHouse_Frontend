@@ -30,8 +30,6 @@ export function Cardapio() {
         navigate(`/item?titulo=${novoTitulo}`);
     }
 
-    let key = true;
-
     const [busca, setBusca] = useState('');
 
     const lowerBusca = busca.toLowerCase();
@@ -79,7 +77,7 @@ export function Cardapio() {
                         <h2>Entradas</h2>
                         <hr />
                         <div>
-                            <div className="estruturaBotoes">
+                            <div className="estruturaBotoesCardapio">
                                 {entrada?.map(item => {
                                     return (
                                         
@@ -107,7 +105,7 @@ export function Cardapio() {
                         <h2>Pratos Principais</h2>
                         <hr />
                         <div>
-                            <div className="estruturaBotoes">
+                            <div className="estruturaBotoesCardapio">
                                 {pratoPrincipal?.map(item => {
                                     return (
                                         
@@ -135,7 +133,7 @@ export function Cardapio() {
                         <h2>Sobremesas</h2>
                         <hr />
                         <div>
-                            <div className="estruturaBotoes">
+                            <div className="estruturaBotoesCardapio">
                                 {sobremesa?.map(item => {
                                     return (
                                         
@@ -163,7 +161,7 @@ export function Cardapio() {
                         <h2>Bebidas</h2>
                         <hr />
                         <div>
-                            <div className="estruturaBotoes">
+                            <div className="estruturaBotoesCardapio">
                                 {bebida?.map(item => {
                                     return (
                                         
