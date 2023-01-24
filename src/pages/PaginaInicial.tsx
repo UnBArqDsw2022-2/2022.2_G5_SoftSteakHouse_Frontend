@@ -14,34 +14,40 @@ type Item = {
     titulo: string;
     descricao: string;
     preco: number;
+    classificacao: string;
     link_imagem: string;
 }
 
 export function PaginaInicial() {
-
 
     const { data: itens, error, isFetching } =
         useFetch<Item[]>('api/v1/itens')
 
     const navigate = useNavigate();
 
+    const [busca, setBusca] = useState('');
+
     function handleClick(novoTitulo: string) {
-        if(novoTitulo != ''){
-            navigate(`/item?titulo=${novoTitulo}`);
-        }
+        navigate(`/item?titulo=${novoTitulo}`);
     }
 
-    const [busca, setBusca] = useState('');
+    const lowerBusca = busca.toLowerCase();
+
+    const pratosFiltrados = itens?.filter((prato) => prato.titulo.toLowerCase().includes(lowerBusca));
 
     return (
         <div>
             <Header />
+            <br />
+            <br />
+            <br />
+            <br />
             <body>
                 <div className="container">
                     <div className="row">
                         <div id="left">
                             <img className="softsteak" src={softsteak} />
-                            <h2>Soft Steak House</h2>
+                            <h2 style={{ float: "left" }}>Soft Steak House</h2>
                         </div>
                         <div id="right">
                             <div id='center'>
@@ -54,17 +60,12 @@ export function PaginaInicial() {
                                         <input
                                             type="text"
                                             placeholder='Pesquisa'
-                                            className="inputPesquisa"
                                             value={busca}
                                             onChange={(ev) => setBusca(ev.target.value)}
                                         />
-                                        <button onClick={() => handleClick(busca)}
-                                            className="botaoPesquisa">
-                                            <FontAwesomeIcon id="MagnifyingGlass" icon={faMagnifyingGlass} />
-                                        </button>
-
                                     </div>
                                 </div>
+                                <br />
                                 <br />
                                 <br />
                                 <br />
@@ -78,58 +79,30 @@ export function PaginaInicial() {
                             <br />
                             <hr />
                             <h1>Destaques</h1>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
-                                </div>
-                            </div>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
-                                </div>
-                            </div>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
-                                </div>
-                            </div>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
-                                </div>
-                            </div>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
-                                </div>
-                            </div>
-                            <div className="destaque">
-                                <div className="imgPrato">
-                                    <img className="img" src={cavalo} />
-                                </div>
-                                <div className="conteudo">
-                                    <h3>Bife a cavalo</h3>
-                                    <p>Acompanha arroz, feijão de caldo e farofa. R$34,99 </p>
+                            <div>
+                                <div>
+                                    <div className="estruturaBotoesPaginaInicial">
+                                        {pratosFiltrados?.map(item => {
+                                            return (
+
+                                                <div>
+                                                    <button
+                                                        onClick={() => handleClick(item.titulo)}
+                                                        className="botaoItemPaginaInicial"
+                                                    >
+                                                        <div style={{ width: "50%" }}>
+                                                            <img className="imagemPaginaCardapio" src={item.link_imagem} alt={item.titulo} />
+                                                        </div>
+                                                        <div className="estruturaInternaBotoes">
+                                                            <h3>{item.titulo}</h3>
+                                                            <p className="itemDescricao">{item.descricao}</p>
+                                                            <strong className="itemPreco">{item.preco}</strong>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
                             </div>
                         </div>
