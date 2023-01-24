@@ -4,7 +4,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import '../pages/PaginaInicial.css';
 import '../pages/Sidebar'
 import { Sidebar } from '../pages/Sidebar';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const Header = () => {
     const [showSidebar, setShowSidebar] = useState(false);
