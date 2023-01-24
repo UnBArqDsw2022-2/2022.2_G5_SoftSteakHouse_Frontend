@@ -53,6 +53,7 @@ export function PaginaInicial() {
                                     <div id="pesquisa">
                                         <input
                                             type="text"
+                                            placeholder='Pesquisa'
                                             className="inputPesquisa"
                                             value={busca}
                                             onChange={(ev) => setBusca(ev.target.value)}
