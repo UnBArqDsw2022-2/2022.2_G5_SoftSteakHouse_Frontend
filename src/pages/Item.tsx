@@ -27,10 +27,14 @@ export function Item() {
     const item = itens && itens[0];
 
     return (
-        <body className='paginaItemCorpo'>
+        <body className="paginaItemCorpo">
+            <Header />
             <div className="paginaItemEstrutura">
                 {isFetching && <p>Carregando...</p>}
-                <Header />
+                <br />
+                <br />
+                <br />
+                <br />
                 <div>
                     <img className="imagemPaginaItem" src={item?.link_imagem} />
                     <h1 className='tituloPaginaItem'>{item?.titulo}</h1>
