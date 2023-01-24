@@ -72,14 +72,32 @@ body {
     margin-top: -10px;
 }
 
-.destaque {
-    border-radius: 25px;
-    background: gray;
-    width: 38%;
-    height: 100px;
-    padding: 10px;
-    float: left;
-    margin: 10px;
+.botaoItemPaginaInicial {
+    display: flex;
+    background: #686868;
+    color: #ffffff;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 75%;
+    max-width: 440px;
+    max-height: 165px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+/* @media (max-width: 600px) {
+    .estruturaBotoesPaginaInicial {
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+    }
+} */
+
+.estruturaBotoesPaginaInicial {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
 }
 
 .prato {
