@@ -2,16 +2,19 @@ import { useState } from "react";
 import "./Login.css";
 import { User } from 'react-feather';
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/authContext";
-import { LoginUser } from "../provider/authProvider";
+import { api } from "../hooks/useFetch";
+import { Header } from "../assets/Header";
 
+type User = {
+    username: String,
+    password: String,
+}
 
 
 export function Login() {
-    const { login } = useAuth();
     const navigate = useNavigate();
     const [loading, setLoading] = useState<boolean>(false);
-    const [user, setUser] = useState<LoginUser>({
+    const [user, setUser] = useState<User>({
         username: "",
         password: ""
     });
@@ -30,8 +33,15 @@ export function Login() {
     function onSubmit() {
         setLoading(true);
         try {
-            login(user);
-            navigate("/telaPrincipal");
+            api.post('/token', user)
+                .then(({data}) => {
+                    localStorage.setItem("accessToken", data?.access);
+                    localStorage.setItem("refreshToken", data?.refresh);
+            
+                    api.defaults.headers.common['token'] = data?.access;
+                    navigate("/telaPrincipal");
+                })
+                .catch(ex => alert("Usuário ou senha incorreta!"))
         } catch (error) {
             alert(error);
             setLoading(true);
@@ -39,7 +49,8 @@ export function Login() {
     }
     return (
         <div className="PaginaLoginBody">
-            <form className="PaginaLoginForm" onSubmit={onSubmit}>
+            <Header />
+            <div className="PaginaLoginForm" onSubmit={onSubmit}>
                 <section className="PaginaLoginSection">
                     <User color="white" size={150} stroke-width="1" />
                 </section>               
@@ -53,13 +64,13 @@ export function Login() {
                 </section>
                 <section className="PaginaLoginSection">
                     <div className="submit-div">
-                        <button type="submit" disabled={loading} className="submit-button"><span>{loading? "Carregando...": "Entrar"}</span></button>
+                        <button onClick={onSubmit} type="submit" disabled={loading} className="submit-button"><span>{loading? "Carregando...": "Entrar"}</span></button>
                     </div>
                     <div className="submit-div">
                         <a href="#">Esqueceu a senha?</a>
                     </div>
                 </section>
-            </form>
+            </div>
         </div>
     );
 }

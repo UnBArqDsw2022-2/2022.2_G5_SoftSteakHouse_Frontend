@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios, { AxiosRequestConfig } from "axios";
 
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: 'https://abraao1231.pythonanywhere.com'
 
 })
