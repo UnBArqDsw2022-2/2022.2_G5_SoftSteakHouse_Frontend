@@ -10,7 +10,6 @@ type User = {
     password: String,
 }
 
-
 export function Login() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState<boolean>(false);
@@ -32,21 +31,20 @@ export function Login() {
 
     function onSubmit() {
         setLoading(true);
-        try {
-            api.post('/token', user)
-                .then(({data}) => {
-                    localStorage.setItem("accessToken", data?.access);
-                    localStorage.setItem("refreshToken", data?.refresh);
-            
-                    api.defaults.headers.common['token'] = data?.access;
-                    navigate("/telaPrincipal");
-                })
-                .catch(ex => alert("Usuário ou senha incorreta!"))
-        } catch (error) {
-            alert(error);
-            setLoading(true);
-        }
+        api.post('/token', user)
+            .then(({data}) => {
+                localStorage.setItem("accessToken", data?.access);
+                localStorage.setItem("refreshToken", data?.refresh);
+        
+                api.defaults.headers.common['token'] = data?.access;
+                navigate("/telaPrincipal");
+            })
+            .catch(ex => {
+                alert("Usuário ou senha incorreta!");
+                setLoading(true);
+            });
     }
+
     return (
         <div className="PaginaLoginBody">
             <Header />
