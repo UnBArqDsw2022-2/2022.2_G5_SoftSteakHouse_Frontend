@@ -9,6 +9,7 @@ import { Cardapio } from "./pages/Cardapio";
 import { Login } from "./pages/Login";
 import { GerenciamentoMesas } from "./pages/GerenciamentoMesas";
 import { Item } from "./pages/Item";
+import { Ajuda } from "./pages/Ajuda";
 
 export function AppRoutes() {
     return (
@@ -19,6 +20,7 @@ export function AppRoutes() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/gerenciamentomesas" element={<GerenciamentoMesas />} />
                 <Route path="/item" element={<Item />} />
+                <Route path="/ajuda" element={<Ajuda />} />
             </Routes>
         </Router>
     )
