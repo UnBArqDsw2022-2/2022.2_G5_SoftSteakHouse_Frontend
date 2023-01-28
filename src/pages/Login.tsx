@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
 import { User } from 'react-feather';
-import { api } from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 import { LoginUser } from "../provider/authProvider";
@@ -39,20 +38,20 @@ export function Login() {
         }
     }
     return (
-        <body>
-            <form onSubmit={onSubmit}>
-                <section>
+        <div className="PaginaLoginBody">
+            <form className="PaginaLoginForm" onSubmit={onSubmit}>
+                <section className="PaginaLoginSection">
                     <User color="white" size={150} stroke-width="1" />
                 </section>               
-                <section>
+                <section className="PaginaLoginSection">
                     <div className="input-container">
-                        <input placeholder="Usuário" onChange={(e) => onChangeEmail(e.target.value)}/>
+                        <input className="PaginaLoginInput" placeholder="Usuário" onChange={(e) => onChangeEmail(e.target.value)}/>
                     </div>
                     <div className="input-container">
-                        <input type="password" placeholder="Senha" onChange={(e) => onChangePassword(e.target.value)}/>
+                        <input className="PaginaLoginInput" type="password" placeholder="Senha" onChange={(e) => onChangePassword(e.target.value)}/>
                     </div>
                 </section>
-                <section>
+                <section className="PaginaLoginSection">
                     <div className="submit-div">
                         <button type="submit" disabled={loading} className="submit-button"><span>{loading? "Carregando...": "Entrar"}</span></button>
                     </div>
@@ -61,6 +60,6 @@ export function Login() {
                     </div>
                 </section>
             </form>
-        </body>
+        </div>
     );
 }

@@ -1,9 +1,4 @@
-* {
-  margin: none;
-  padding: none;
-}
-
-body {
+.PaginaLoginBody {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +8,7 @@ body {
   font-size: 130%;
 }
 
-form { 
+.PaginaLoginForm { 
   width: 100%;
   margin-top: 40%;
   max-width: 300px;
@@ -49,7 +44,7 @@ form {
   flex-direction: column;
 }
 
-input:focus {
+.PaginaLoginInput {
   outline: none;
 }
 
@@ -58,7 +53,7 @@ input:focus {
   color: white;
 }
 
-section {
+.PaginaLoginSection {
   width: 100%;
   display: flex;
   align-items: center;
