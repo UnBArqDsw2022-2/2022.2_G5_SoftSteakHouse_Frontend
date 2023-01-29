@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./Login.css";
 import { User } from 'react-feather';
 import { useNavigate } from "react-router-dom";
-import { api } from "../hooks/useFetch";
-import { Header } from "../assets/Header";
+import { api } from "../../hooks/useFetch";
+import { Header } from "../../assets/Header";
 
 type User = {
     username: String,

@@ -6,10 +6,10 @@ import {
 
 import { PaginaInicial } from "./pages/PaginaInicial/PaginaInicial";
 import { Cardapio } from "./pages/Cardapio/Cardapio";
-import { Login } from "./pages/Login";
 import { GerenciamentoMesas } from "./pages/GerenciamentoMesas/GerenciamentoMesas";
 import { Item } from "./pages/Item/Item";
 import { Ajuda } from "./pages/Ajuda/Ajuda";
+import { Login } from "./pages/Login/Login";
 
 export function AppRoutes() {
     return (
