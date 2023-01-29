@@ -1,6 +1,6 @@
 import './Item.css';
-import { useFetch } from "../hooks/useFetch";
-import { Header } from "../assets/Header";
+import { useFetch } from "../../hooks/useFetch";
+import { Header } from "../../assets/Header";
 
 type Item = {
     titulo: string;
@@ -39,7 +39,7 @@ export function Item() {
                     <img className="imagemPaginaItem" src={item?.link_imagem} />
                     <h1 className='tituloPaginaItem'>{item?.titulo}</h1>
                     <p>{item?.descricao}</p>
-                    <p>{item?.preco}</p>
+                    <p>{"R$ " + item?.preco}</p>
                     <hr />
                     <h2 className='tituloPaginaAdicionais'>Adicionais</h2>
                     {adicionais?.map(adicional => {

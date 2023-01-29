@@ -4,12 +4,12 @@ import {
     Route
 } from "react-router-dom";
 
-import { PaginaInicial } from "./pages/PaginaInicial";
-import { Cardapio } from "./pages/Cardapio";
+import { PaginaInicial } from "./pages/PaginaInicial/PaginaInicial";
+import { Cardapio } from "./pages/Cardapio/Cardapio";
 import { Login } from "./pages/Login";
-import { GerenciamentoMesas } from "./pages/GerenciamentoMesas";
-import { Item } from "./pages/Item";
-import { Ajuda } from "./pages/Ajuda";
+import { GerenciamentoMesas } from "./pages/GerenciamentoMesas/GerenciamentoMesas";
+import { Item } from "./pages/Item/Item";
+import { Ajuda } from "./pages/Ajuda/Ajuda";
 
 export function AppRoutes() {
     return (
