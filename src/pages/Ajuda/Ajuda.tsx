@@ -1,4 +1,4 @@
-import { Header } from "../assets/Header";
+import { Header } from "../../assets/Header";
 
 export function Ajuda() {
   return (

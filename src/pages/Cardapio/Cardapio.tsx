@@ -1,10 +1,10 @@
-import "../App.css"
-import { Header } from "../assets/Header";
-import './PaginaInicial';
+import "../../App.css"
+import { Header } from "../../assets/Header";
+import '../PaginaInicial/PaginaInicial';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faPersonMilitaryToPerson } from '@fortawesome/free-solid-svg-icons';
-import { useFetch } from "../hooks/useFetch";
-import { Item } from "./Item";
+import { useFetch } from "../../hooks/useFetch";
+import { Item } from "../Item/Item";
 import { useNavigate } from "react-router-dom";
 import './Cardapio.css';
 import React, { useState } from "react";
@@ -21,8 +21,7 @@ type Item = {
 
 export function Cardapio() {
 
-    const { data: itens, error, isFetching } =
-        useFetch<Item[]>('api/v1/itens')
+    const { data: itens, error, isFetching } = useFetch<Item[]>('api/v1/itens')
 
     const navigate = useNavigate();
 
@@ -62,7 +61,6 @@ export function Cardapio() {
                                 onChange={(ev) => setBusca(ev.target.value)}
                             />
                         </div>
-                        
                     </div>
                     <br />
                     <div className="col-2">
@@ -80,7 +78,7 @@ export function Cardapio() {
                             <div className="estruturaBotoesCardapio">
                                 {entrada?.map(item => {
                                     return (
-                                        
+
                                         <div>
                                             <button
                                                 onClick={() => handleClick(item.titulo)}
@@ -108,7 +106,7 @@ export function Cardapio() {
                             <div className="estruturaBotoesCardapio">
                                 {pratoPrincipal?.map(item => {
                                     return (
-                                        
+
                                         <div>
                                             <button
                                                 onClick={() => handleClick(item.titulo)}
@@ -136,7 +134,7 @@ export function Cardapio() {
                             <div className="estruturaBotoesCardapio">
                                 {sobremesa?.map(item => {
                                     return (
-                                        
+
                                         <div>
                                             <button
                                                 onClick={() => handleClick(item.titulo)}
@@ -164,7 +162,7 @@ export function Cardapio() {
                             <div className="estruturaBotoesCardapio">
                                 {bebida?.map(item => {
                                     return (
-                                        
+
                                         <div>
                                             <button
                                                 onClick={() => handleClick(item.titulo)}

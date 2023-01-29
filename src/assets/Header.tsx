@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import '../pages/PaginaInicial.css';
-import '../pages/Sidebar'
-import { Sidebar } from '../pages/Sidebar';
+import '../pages/PaginaInicial/PaginaInicial.css';
+import '../pages/Sidebar/Sidebar'
+import { Sidebar } from '../pages/Sidebar/Sidebar';
 import { useState } from 'react';
 
 export const Header = () => {
