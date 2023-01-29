@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Plus, Minus, Info } from "react-feather";
-import { Header } from "../assets/Header";
-import { api, useFetch } from "../hooks/useFetch";
+import { Header } from "../../assets/Header";
+import { api, useFetch } from "../../hooks/useFetch";
 import "./GerenciamentoMesas.css";
 
 interface Mesa {
