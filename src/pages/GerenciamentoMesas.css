@@ -1,36 +1,26 @@
-* {
-  margin: none;
-  padding: none;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.PaginaMesasCorpo {
   background: #000000;
   color: #ffffff;
   font-size: 130%;
 }
 
-hr {
+.PaginaMesasEstrutura {
+  padding-top: 5%;
+  max-width: 665px;
+  margin: auto;
+}
+
+.PaginaMesasItem {
+  margin: auto;
+}
+
+.PaginaMesasBarra {
   height: 5px;
   background-color: #ffffff;
 }
 
-.container { 
-  padding: 0 10px;
-  width: 100rem;
-  margin-top: 20%;
-}
 
-.title {
-  align-self: flex-start;
-}
-
-
-
-.row {
+.PaginaMesasLinha {
   width: 100%;
   padding: 10px 0;
   display: flex;
@@ -47,7 +37,7 @@ hr {
   align-items: center;
 }
 
- label {
+.label {
   padding-right: 10px;
   max-width: 15ch;
   overflow: visible;
@@ -55,9 +45,9 @@ hr {
   white-space: nowrap;
 }
 
-select {
-  width: 100%;
+.select {
   height: 50px;
+  width: 50%;
   background-color: transparent;
   border-radius: 25px;
   color: white;
@@ -65,36 +55,30 @@ select {
   border: 3px solid #ffffff;
 }
 
-option {
+.PaginaMesasSelectOptions {
   background-color: black;
 }
 
-input:focus {
-  outline: none;
-}
 
 .submit-button > span {
   font-size: 18px;
   color: white;
 }
 
-section {
+.section {
   flex: 1;
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-button { 
+.PaginaMesasIconButton { 
   width: 50px;
   height: 50px;
   margin: 0 5px;
   border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .minus {

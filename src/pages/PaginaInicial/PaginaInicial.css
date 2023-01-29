@@ -19,16 +19,19 @@ body {
 
 .botaoPesquisa {
     display: flex;
-    background: #000000;
+    background: gray;
     color: #ffffff;
     padding: 5px;
     border: none;
     cursor: pointer;
     border-radius: 7px;
     font-size: 100%;
-    max-width: 50px;
-    margin-left: 172px;
-    margin-top: -28px;
+}
+
+.divPesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #MagnifyingGlass{
@@ -88,12 +91,9 @@ body {
     margin-bottom: 8%;
 }
 
-/* @media (max-width: 600px) {
-    .estruturaBotoesPaginaInicial {
-        grid-template-columns: repeat(1, 1fr);
-        display: grid;
-    }
-} */
+.dropdownPesquisaCategoriaItem {
+    outline: none;
+}
 
 .estruturaBotoesPaginaInicial {
     grid-template-columns: repeat(2, 1fr);
@@ -134,4 +134,11 @@ body {
 .singIn {
     float: right;
     width: 50%;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
 }
