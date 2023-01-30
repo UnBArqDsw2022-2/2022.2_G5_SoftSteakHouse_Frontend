@@ -25,9 +25,9 @@ export function GerenciamentoMesas() {
         api.put<Mesa>(`api/v1/mesas/${mesa.id}`, mesa)
             .then((result) => {
                 setMesas((prev) => {
-                    const tmp = [...prev] ?? [];
+                    const tmp = prev ? [...prev] : [];
                     const obj = tmp.find(({id}) => id == mesa.id);
-                    const index = tmp.indexOf(obj);
+                    const index = obj ? tmp.indexOf(obj) : -1;
                     tmp[index] = result.data;
                     return tmp;
                 })
