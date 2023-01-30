@@ -4,5 +4,5 @@ COPY package.json ./
 COPY yarn.lock ./
 COPY ./ ./
 RUN yarn
-EXPOSE 8000
+EXPOSE 8001
 CMD ["yarn", "dev"]
